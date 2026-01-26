@@ -25,6 +25,75 @@
 	
 	  <div class="h-entry">
 		
+			<h1><a href="https://amerpie.lol/2026/01/26/clawdbot-can-do-it.html">Clawdbot Can Do It</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/01/26/clawdbot-can-do-it.html" class="u-url"><time class="dt-published" datetime="2026-01-26 11:00:29 -0500">Jan 26, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/01/24/eat-this-to-stay-alive.html">Eat this to Stay Alive</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/01/24/eat-this-to-stay-alive.html" class="u-url"><time class="dt-published" datetime="2026-01-24 12:05:00 -0500">Jan 24, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<p>async function fetchInteractions(headerTitle) {
+const response = await fetch(&ldquo;<a href="https://webmention.io/api/mentions.jf2?target=%22">https://webmention.io/api/mentions.jf2?target=&quot;</a> + document.URL);
+const data = await response.json();
+if (data &amp;&amp; data.children.length &gt; 0) {</p>
+<pre><code>  const interactions = document.createElement(&quot;div&quot;);
+  interactions.innerHTML = `&lt;h3&gt;${headerTitle ?? &quot;Interactions&quot;}&lt;/h3&gt;`;
+
+  for (const child of data.children) {
+    const interaction = document.createElement(&quot;div&quot;);
+
+    interaction.innerHTML = `
+          &lt;p&gt;
+              &lt;strong&gt;&lt;a href=&quot;${child.author.url}&quot; target=&quot;_blank&quot;&gt;${child.author.name}&lt;/a&gt;&lt;/strong&gt;
+              &lt;small&gt; - ${new Date(child[&quot;wm-received&quot;]).toLocaleString(&quot;en-US&quot;, {
+      month: &quot;short&quot;,
+      day: &quot;numeric&quot;,
+      year: &quot;numeric&quot;,
+    })}&lt;/small&gt;
+          &lt;/p&gt;
+          &lt;blockquote&gt;${setContent(child)}&lt;/blockquote&gt;
+      `;
+
+    interactions.appendChild(interaction);
+  }
+
+  const upvoteForm = document.getElementById(&quot;upvote-form&quot;);
+  upvoteForm.parentNode.insertBefore(interactions, upvoteForm.nextSibling);
+}
+</code></pre>
+<p>}</p>
+<p>fetchInteractions(document.currentScript.getAttribute(&ldquo;data-interactions&rdquo;));
+}
+<!-- raw HTML omitted --></p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
 			<h1><a href="https://amerpie.lol/2026/01/24/four-new-free-and-affordable.html">Four New Free and Affordable Apps I Like from Indi Devs</a></h1>
 		
 
