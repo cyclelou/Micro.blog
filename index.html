@@ -25,6 +25,94 @@
 	
 	  <div class="h-entry">
 		
+			<h1><a href="https://amerpie.lol/2026/02/09/crucial-track-for-february.html">Crucial Track for February 9, 2026</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/09/crucial-track-for-february.html" class="u-url"><time class="dt-published" datetime="2026-02-09 06:42:02 -0500">Feb 9, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/02/08/stop-making-cron-jobs.html">Stop Making CRON Jobs!</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/08/stop-making-cron-jobs.html" class="u-url"><time class="dt-published" datetime="2026-02-08 17:21:38 -0500">Feb 8, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Early in my career, I used to get annoyed when the old hands would wave away every automation problem with, &ldquo;Just make a cron job.&rdquo;</p>
+<p>Cron dates back to the earliest days of Unix. It&rsquo;s simple, dumb, and dependable: once a minute it checks a text file, and if a line in that file matches the current time, it runs the associated command. Like most Unix tools, it works great&ndash;once you learn the arcane scheduling syntax.</p>
+<p>For example:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>To cron, that means: <em>run this script every day at 3:00 AM.</em>**</p>
+<p>Cron was designed for machines that live in server rooms&ndash;powered on 24/7, connected to stable networks, and rarely put to sleep.</p>
+<p>macOS laptops are… not that.</p>
+<p>The core problem is that cron has zero situational awareness. It doesn&rsquo;t know or care whether:</p>
+<!-- raw HTML omitted -->
+<p>Cron just runs on schedule. If your Mac is asleep at 3:00 AM, tough luck. That limitation makes cron a poor fit for most real-world Mac automation.</p>
+<!-- raw HTML omitted -->
+<p>Apple introduced <!-- raw HTML omitted -->launchd<!-- raw HTML omitted --> over 20 years ago with OS X 10.4 (Tiger) to replace cron and a pile of other legacy services.</p>
+<p>Unlike cron, launchd actually understands the modern Mac environment. It can handle:</p>
+<!-- raw HTML omitted -->
+<p>Most importantly, launchd isn&rsquo;t limited to &ldquo;run at this time.&rdquo; It can trigger jobs based on <!-- raw HTML omitted -->state and context<!-- raw HTML omitted -->, including:</p>
+<!-- raw HTML omitted -->
+<p>In other words, launchd is designed for the messy, mobile, power-managed world Macs actually live in.</p>
+<p>There&rsquo;s just one big catch.</p>
+<p>You don&rsquo;t create launchd jobs with a simple line of text. Instead, you have to write XML property list files&ndash;verbose, picky, easy to mess up, and filled with cryptic keys you&rsquo;re expected to understand.</p>
+<p>For most sane people, that&rsquo;s a hard pass.</p>
+<!-- raw HTML omitted -->
+<p>Fortunately, it&rsquo;s 2026, and no one needs to hand-craft launchd XML files anymore. Several excellent Mac apps provide friendly interfaces for building launchd jobs or similar scheduled tasks.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Lingon Pro<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Lingon has been around for more than two decades, and it&rsquo;s still one of the best launchd tools available.</p>
+<p>It gives you a clean GUI for creating complex jobs that can run:</p>
+<!-- raw HTML omitted -->
+<p>If you need serious, reliable background automation on macOS, Lingon Pro is the gold standard.</p>
+<p><!-- raw HTML omitted -->Price:<!-- raw HTML omitted --> $23.99 one-time, or $11.99/year subscription</p>
+<p><!-- raw HTML omitted -->Trial:<!-- raw HTML omitted --> Full-featured one-week trial <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->LaunchD Task Scheduler<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>This is a simpler, cheaper alternative to Lingon Pro. It doesn&rsquo;t have quite the same depth, but it&rsquo;s more than enough for many users.</p>
+<p>Key features:</p>
+<!-- raw HTML omitted -->
+<p>If you want basic launchd automation without a learning curve, this $4.99 app is a solid value.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Keyboard Maestro<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Keyboard Maestro isn&rsquo;t primarily a scheduler&ndash;but it <!-- raw HTML omitted -->does<!-- raw HTML omitted --> include powerful time-based and event-based triggers.</p>
+<p>Some of the available triggers:</p>
+<!-- raw HTML omitted -->
+<p>The downside: Keyboard Maestro only works when:</p>
+<!-- raw HTML omitted -->
+<p>So it&rsquo;s not a replacement for launchd. But for user-level automation, it&rsquo;s incredibly powerful.</p>
+<p>For example, I have a macro that periodically checks whether Raycast, Hazel, Stream Deck, and BetterTouchTool are running&ndash;and restarts them if they&rsquo;re not. That&rsquo;s the kind of practical glue automation Keyboard Maestro excels at.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Apple Shortcuts<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Shortcuts on macOS has matured a lot, especially since macOS Tahoe. It now supports time-based automations similar to what iOS users have had for years.</p>
+<p>But there are important limitations:</p>
+<!-- raw HTML omitted -->
+<p>Still, Shortcuts can trigger actions based on:</p>
+<!-- raw HTML omitted -->
+<p>If you have an always-on Mac mini or studio, Shortcuts can be surprisingly capable. On a sleeping laptop, not so much.</p>
+<!-- raw HTML omitted -->
+<p>If you just need &ldquo;run this thing on a schedule&rdquo; without diving into launchd, these are worth a look:</p>
+<!-- raw HTML omitted -->
+<p>If you&rsquo;re automating a real Mac&ndash;not a headless server, cron is usually the wrong tool.</p>
+<p>For anything that needs to run reliably in the background, use <!-- raw HTML omitted -->launchd<!-- raw HTML omitted -->. And unless you genuinely enjoy editing XML by hand, use a GUI tool like Lingon Pro or LaunchD Task Scheduler to manage it.</p>
+<p>For user-level automations while you&rsquo;re actively working, Keyboard Maestro and Shortcuts are fantastic.</p>
+<p>Pick the right tool for the job, and your automations will actually work when you need them&ndash;rather than silently failing at 3:00 AM while your Mac sleeps peacefully on the nightstand.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
 			<h1><a href="https://amerpie.lol/2026/02/08/crucial-track-for-february.html">Crucial Track for February 8, 2026</a></h1>
 		
 
