@@ -25,6 +25,205 @@
 	
 	  <div class="h-entry">
 		
+			<h1><a href="https://amerpie.lol/2026/02/12/turning-appadddict-into-a-fully.html">Turning AppAdddict into a Fully Searchable Archive with Integrity, Raindrop, and EagleFiler</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/12/turning-appadddict-into-a-fully.html" class="u-url"><time class="dt-published" datetime="2026-02-12 07:21:47 -0500">Feb 12, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Here&rsquo;s a recent workflow I built using apps I&rsquo;ve reviewed on this blog.</p>
+<!-- raw HTML omitted -->
+<p>I spend a fair amount of time in r/MacApps, on Mastodon, and in email threads talking software with other nerds. I&rsquo;ve reviewed hundreds of apps, and I&rsquo;m often asked for links to older posts.</p>
+<p>Until recently, I had two options:</p>
+<!-- raw HTML omitted -->
+<p>Both work. Neither is efficient.</p>
+<p>Offline, I can search the Markdown files locally. But those files don&rsquo;t include the public URLs. If someone asks for a link, I still have to go hunting.</p>
+<p>On top of that, my blog tags are too broad to be genuinely helpful when I&rsquo;m trying to surface something specific.</p>
+<p>The friction wasn&rsquo;t huge &ndash; but it was constant.</p>
+<!-- raw HTML omitted -->
+<p>I wanted two things:</p>
+<!-- raw HTML omitted -->
+<p>No CMS rebuild. No new publishing platform. Just better infrastructure using tools I already trust.</p>
+<!-- raw HTML omitted -->
+<p>Nothing exotic. Just focused utilities doing one job well.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->1. Crawl the Site<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>I fed the base URL of my blog into Integrity and configured it to return only one instance of each URL.</p>
+<p>The crawl took about five minutes and produced a sortable list of every post URL on my site.</p>
+<p>No guesswork. No missed pages.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->2. Export to CSV<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>I copied the list of URLs from Integrity, pasted them into Easy CSV, and saved the result as a properly formatted CSV file.</p>
+<p>At this point, I had a clean dataset: one row per post, one URL per row.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->3. Convert to Safari Bookmarks<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>I opened Ghostty and ran my Python script:</p>
+<p><!-- raw HTML omitted -->CSV to Safari Bookmarks<!-- raw HTML omitted --></p>
+<p>The script converts the CSV into a Safari-compatible bookmarks file. Simple transformation, clean output.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->4. Import into Raindrop.io<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>In Raindrop, I chose <!-- raw HTML omitted -->Import Bookmarks<!-- raw HTML omitted --> &ndash; not &ldquo;Import File.&rdquo;</p>
+<p>That distinction matters. The bookmarks import preserves structure correctly.</p>
+<p>Raindrop then pulled in every post.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->5. Import into EagleFiler<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>In EagleFiler, I selected:</p>
+<p>File → Import Bookmarks</p>
+<p>EagleFiler fetched each URL and created a local web archive for every post.</p>
+<p>No manual downloading. No copy/paste gymnastics.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->Raindrop.io<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Raindrop created a collection containing every post on my site.</p>
+<p>Because it performs full-text indexing, searches aren&rsquo;t limited to titles. I can search for an obscure phrase buried deep in an article and still surface the right post.</p>
+<p>It also stores a permanent copy of each page. If my hosting provider disappears tomorrow, I still have an offsite archive.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->EagleFiler<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>EagleFiler downloaded and archived every URL as a standalone web archive file.</p>
+<p>A web archive is a single file containing the full page &ndash; text, images, links, styling. It&rsquo;s searchable, portable, and completely offline.</p>
+<p>Now I have:</p>
+<!-- raw HTML omitted -->
+<p>No rebuild. No database export. No new platform.</p>
+<p>Just composable tools behaving like infrastructure.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->…Use My CMS Search?<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>CMS search works until it doesn&rsquo;t.</p>
+<p>It requires being online, depends on whatever indexing logic your platform uses, and doesn&rsquo;t give you a portable dataset you control.</p>
+<p>I wanted something I could manipulate, migrate, or repurpose independently of my hosting stack.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->…Search the Markdown Files Directly?<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>I can &ndash; and I do.</p>
+<p>But Markdown files don&rsquo;t include the canonical public URL. When someone asks for a link, I need that immediately.</p>
+<p>This workflow preserves the published URLs alongside searchable content.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->…Export the Database?<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>That&rsquo;s fine if you&rsquo;re running WordPress.</p>
+<p>I&rsquo;m not. And even if I were, a database dump is not a clean, portable, human-friendly index. It&rsquo;s raw tables.</p>
+<p>I wanted something that integrates with tools I already use daily.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->…Use a Browser Bookmark Export?<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>That only captures what I&rsquo;ve manually bookmarked.</p>
+<p>I wanted a complete, authoritative list of everything published &ndash; no gaps and no reliance on memory.</p>
+<p>Integrity gives me the ground truth.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted -->…Install a Static Site Search Tool?<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Client-side search libraries are great for readers.</p>
+<p>This wasn&rsquo;t about improving the reader experience. It was about fixing my own workflow across online search, offline access, and long-term archiving.</p>
+<!-- raw HTML omitted -->
+<p>This system gives me:</p>
+<!-- raw HTML omitted -->
+<p>No new stack. No fragile automation. Just small tools composed intentionally.</p>
+<p>The broader lesson here is simple: sometimes the right move isn&rsquo;t adopting something bigger. It&rsquo;s wiring together boring, reliable utilities until they quietly become infrastructure.</p>
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/02/11/the-art-of-not-living.html">The Art of Not Living in Fear Revisited</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/11/the-art-of-not-living.html" class="u-url"><time class="dt-published" datetime="2026-02-11 19:33:00 -0500">Feb 11, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<p>async function fetchInteractions(headerTitle) {
+const response = await fetch(&ldquo;<a href="https://webmention.io/api/mentions.jf2?target=%22">https://webmention.io/api/mentions.jf2?target=&quot;</a> + document.URL);
+const data = await response.json();
+if (data &amp;&amp; data.children.length &gt; 0) {</p>
+<pre><code>  const interactions = document.createElement(&quot;div&quot;);
+  interactions.innerHTML = `&lt;h3&gt;${headerTitle ?? &quot;Interactions&quot;}&lt;/h3&gt;`;
+
+  for (const child of data.children) {
+    const interaction = document.createElement(&quot;div&quot;);
+
+    interaction.innerHTML = `
+          &lt;p&gt;
+              &lt;strong&gt;&lt;a href=&quot;${child.author.url}&quot; target=&quot;_blank&quot;&gt;${child.author.name}&lt;/a&gt;&lt;/strong&gt;
+              &lt;small&gt; - ${new Date(child[&quot;wm-received&quot;]).toLocaleString(&quot;en-US&quot;, {
+      month: &quot;short&quot;,
+      day: &quot;numeric&quot;,
+      year: &quot;numeric&quot;,
+    })}&lt;/small&gt;
+          &lt;/p&gt;
+          &lt;blockquote&gt;${setContent(child)}&lt;/blockquote&gt;
+      `;
+
+    interactions.appendChild(interaction);
+  }
+
+  const upvoteForm = document.getElementById(&quot;upvote-form&quot;);
+  upvoteForm.parentNode.insertBefore(interactions, upvoteForm.nextSibling);
+}
+</code></pre>
+<p>}</p>
+<p>fetchInteractions(document.currentScript.getAttribute(&ldquo;data-interactions&rdquo;));
+}
+<!-- raw HTML omitted --></p>
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/02/11/extra-bar-gets-extra-features.html">Extra Bar Gets Extra Features</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/11/extra-bar-gets-extra-features.html" class="u-url"><time class="dt-published" datetime="2026-02-11 14:02:44 -0500">Feb 11, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>If you have ever used an Elgato Stream Deck, the Extra Bar developers have basically created an application that mimics that, running in a space on your Mac where you can always access it.</p>
+<p><!-- raw HTML omitted -->Here&rsquo;s a list of some of the things I currently can do from Extra Bar:<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/02/11/automounter-feels-like-it-should.html">Automounter Feels Like it Should Be a Part of macOS</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/11/automounter-feels-like-it-should.html" class="u-url"><time class="dt-published" datetime="2026-02-11 09:13:33 -0500">Feb 11, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted -->Automounter supports five protocols:<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>In my testing, I mounted shares from just about everything I had lying around: a Debian 11 server, a Windows 11 workstation, an Unraid server, another Mac, and two WebDAV cloud services&ndash;Koofr and Kdrive. It handled all of them without complaint.</p>
+<p>Automounter has a set of features that make it far more useful than a simple shell script or manually connecting through Finder:</p>
+<!-- raw HTML omitted -->
+<p>Years ago, I traveled between 20-plus sites, each with one or more Mac servers and multiple network shares. Keeping track of IP addresses, credentials, and share names was a constant headache. Automounter would have saved me an absurd amount of time and frustration.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>In my current home-lab setup, it solves a different but equally real problem. Automounter reconnects my shares automatically when I switch Wi-Fi networks or reboot a server. Backup jobs that rely on network storage are suddenly effortless instead of fragile. It quietly removes a whole category of annoyances.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>You can find more details on the <!-- raw HTML omitted --><!-- raw HTML omitted -->developer&rsquo;s website<!-- raw HTML omitted --><!-- raw HTML omitted -->, where you can purchase the app and an optional helper utility required for some advanced features. It&rsquo;s also available in the <!-- raw HTML omitted --><!-- raw HTML omitted -->Mac App Store<!-- raw HTML omitted --><!-- raw HTML omitted -->. The base app is $9.99, and the pro features (mainly the rules engine) are a $3.99 in-app purchase.<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>For anyone who deals with network shares on a regular basis&ndash;at home or at work&ndash;Automounter is one of those small utilities that will soon be indispensable.</p>
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
+			<h1><a href="https://amerpie.lol/2026/02/11/crucial-track-for-february.html">Crucial Track for February 11, 2026</a></h1>
+		
+
+		<a href="https://amerpie.lol/2026/02/11/crucial-track-for-february.html" class="u-url"><time class="dt-published" datetime="2026-02-11 06:42:05 -0500">Feb 11, 2026</time></a>
+
+		<div class="e-content">
+			 <!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+
+		</div>
+	  </div>
+	
+	  <div class="h-entry">
+		
 			<h1><a href="https://amerpie.lol/2026/02/10/why-i-dont-think-ai.html">Why I Don&#39;t Think AI is the Devil</a></h1>
 		
 
@@ -39532,6 +39731,7 @@ My granddaughter, Jolene, named after the Dolly Parton song (note: I eventually 
 
 		<div class="e-content">
 			 <p><img src="https://amerpie.lol/uploads/2024/keyboard-maestro.jpeg" alt="The icon for the Keyboard maestro app "></p>
+<h2 id="hi-its-future-appaddict--here-since-i-wrote-this-post-my-use-of-keyboard-maestro-has-increased-markedly-be-sure-to-check-out-my-new-piece-on-getting-the-most-out-of-keyboard-maestroappaddictapppostkeybhttpsappaddictapppostkeyboard-maestro-the-app-that-makes-everything-better-tips-for-the-for-the-automation-curious">Hi, it&rsquo;s Future AppAddict  here. Since I wrote this post, my use of Keyboard Maestro has increased markedly Be sure to check out my new piece on [getting the most out of Keyboard Maestro.](<a href="https://appaddict.app/post/keyboard-maestro-the-app-that-makes-everything-better-tips-for-the-for-the-automation-curious">appaddict.app/post/keyb&hellip;</a></h2>
 <p><a href="https://www.keyboardmaestro.com/main/">Keyboard Maestro by Stairways Software</a> is the preeminent automation application for macOS. It acts on nearly 30 triggers to perform almost any Mac function you can think of.  It can launch tasks, control applications and manipulate text and images. It&rsquo;s easier to demonstrate its powers than to explain them, so I&rsquo;ll share my top 10 macros.</p>
 <h2 id="1-add-todays-task">1. Add Today&rsquo;s Task</h2>
 <p>This is an example of a macro that runs an iOS shortcut, in this case one that adds my most important task of the day to my <a href="https://obsidian.md">Obsidian</a> daily note. I launch it with a keyboard shortcut.</p>
